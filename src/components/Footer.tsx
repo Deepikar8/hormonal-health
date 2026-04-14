@@ -57,9 +57,20 @@ export default function Footer() {
           <p className="text-xs text-stone-400">
             Evidence-based hormonal health education. Not medical advice.
           </p>
-          <div className="flex gap-4 text-xs text-stone-400">
+          <div className="flex flex-wrap items-center gap-4 text-xs text-stone-400">
             <Link href="/sources" className="hover:text-stone-600 transition-colors">Sources & Citations</Link>
             <Link href="/life-stages" className="hover:text-stone-600 transition-colors">Life Stages</Link>
+            <span className="text-stone-300 hidden sm:inline">·</span>
+            <span>Built by{' '}
+              <a
+                href="https://www.linkedin.com/in/deepika-rudra-murthy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-500 hover:text-amber-700 transition-colors underline underline-offset-2"
+              >
+                Deepika Rudra Murthy
+              </a>
+            </span>
           </div>
         </div>
       </div>
