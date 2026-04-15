@@ -271,120 +271,148 @@ export default function HormoneMapPage() {
         <p className="text-sm text-stone-500 mb-6">Click any hormone card for detail. Arrows show what drives what.</p>
 
         {/* HPO Axis */}
-        <div className="border border-rose-200 rounded-2xl bg-rose-50/30 p-6 mb-6">
+        <div className="border border-rose-200 rounded-2xl bg-rose-50/30 p-4 sm:p-6 mb-6">
           <div className="text-xs font-bold uppercase tracking-wider text-rose-500 mb-4">HPO Axis — Reproductive</div>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 flex-wrap">
-
-            {/* Hypothalamus */}
+          {/* Mobile: vertical steps */}
+          <div className="flex flex-col gap-2 sm:hidden">
+            <MobileStep node={nodeMap["hypothalamus"]} arrow="GnRH ↓" />
+            <MobileStep node={nodeMap["pituitary"]} arrow="FSH + LH ↓" />
+            <div className="grid grid-cols-2 gap-2">
+              <NodeCard node={nodeMap["fsh"]} />
+              <NodeCard node={nodeMap["lh"]} />
+            </div>
+            <MobileArrow label="stimulate" />
+            <MobileStep node={nodeMap["ovaries"]} arrow="produces ↓" />
+            <div className="grid grid-cols-2 gap-2">
+              <NodeCard node={nodeMap["estrogen"]} />
+              <NodeCard node={nodeMap["progesterone"]} />
+              <NodeCard node={nodeMap["testosterone"]} />
+              <NodeCard node={nodeMap["amh"]} />
+            </div>
+          </div>
+          {/* Desktop: horizontal */}
+          <div className="hidden sm:flex items-start sm:items-center gap-3 flex-wrap">
             <NodeCard node={nodeMap["hypothalamus"]} />
             <Arrow label="GnRH" />
             <NodeCard node={nodeMap["pituitary"]} />
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Arrow label="FSH" />
-                <NodeCard node={nodeMap["fsh"]} />
-              </div>
-              <div className="flex items-center gap-2">
-                <Arrow label="LH" />
-                <NodeCard node={nodeMap["lh"]} />
-              </div>
+              <div className="flex items-center gap-2"><Arrow label="FSH" /><NodeCard node={nodeMap["fsh"]} /></div>
+              <div className="flex items-center gap-2"><Arrow label="LH" /><NodeCard node={nodeMap["lh"]} /></div>
             </div>
             <Arrow label="" />
             <NodeCard node={nodeMap["ovaries"]} />
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Arrow label="produces" />
-                <NodeCard node={nodeMap["estrogen"]} />
-              </div>
-              <div className="flex items-center gap-2">
-                <Arrow label="produces" />
-                <NodeCard node={nodeMap["progesterone"]} />
-              </div>
-              <div className="flex items-center gap-2">
-                <Arrow label="produces" />
-                <NodeCard node={nodeMap["testosterone"]} />
-              </div>
-              <div className="flex items-center gap-2">
-                <Arrow label="indicates" />
-                <NodeCard node={nodeMap["amh"]} />
-              </div>
+              <div className="flex items-center gap-2"><Arrow label="produces" /><NodeCard node={nodeMap["estrogen"]} /></div>
+              <div className="flex items-center gap-2"><Arrow label="produces" /><NodeCard node={nodeMap["progesterone"]} /></div>
+              <div className="flex items-center gap-2"><Arrow label="produces" /><NodeCard node={nodeMap["testosterone"]} /></div>
+              <div className="flex items-center gap-2"><Arrow label="indicates" /><NodeCard node={nodeMap["amh"]} /></div>
             </div>
           </div>
-          {/* Feedback loop note */}
-          <div className="mt-4 flex items-start gap-2 text-xs text-rose-700 bg-rose-50 border border-rose-200 rounded-lg px-3 py-2 w-fit">
+          <div className="mt-4 flex items-start gap-2 text-xs text-rose-700 bg-rose-50 border border-rose-200 rounded-lg px-3 py-2">
             <span>↺</span>
             <span><strong>Negative feedback loop:</strong> Estrogen signals back to the hypothalamus and pituitary to reduce FSH/LH. In perimenopause, declining estrogen breaks this loop — FSH rises as the brain tries harder to stimulate the ovaries.</span>
           </div>
         </div>
 
         {/* HPA Axis */}
-        <div className="border border-orange-200 rounded-2xl bg-orange-50/30 p-6 mb-6">
+        <div className="border border-orange-200 rounded-2xl bg-orange-50/30 p-4 sm:p-6 mb-6">
           <div className="text-xs font-bold uppercase tracking-wider text-orange-500 mb-4">HPA Axis — Stress Response</div>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 flex-wrap">
+          {/* Mobile */}
+          <div className="flex flex-col gap-2 sm:hidden">
+            <MobileStep node={nodeMap["hypothalamus"]} arrow="CRH ↓" />
+            <MobileStep node={nodeMap["hpa"]} arrow="signals ↓" />
+            <MobileStep node={nodeMap["adrenal"]} arrow="produces ↓" />
+            <div className="grid grid-cols-2 gap-2">
+              <NodeCard node={nodeMap["cortisol"]} />
+              <NodeCard node={nodeMap["dhea"]} />
+            </div>
+            <MobileArrow label="DHEA converts to" />
+            <div className="grid grid-cols-2 gap-2">
+              <NodeCard node={nodeMap["estrogen"]} mini />
+              <NodeCard node={nodeMap["testosterone"]} mini />
+            </div>
+          </div>
+          {/* Desktop */}
+          <div className="hidden sm:flex items-start sm:items-center gap-3 flex-wrap">
             <NodeCard node={nodeMap["hypothalamus"]} />
             <Arrow label="CRH" />
             <NodeCard node={nodeMap["hpa"]} />
             <Arrow label="" />
             <NodeCard node={nodeMap["adrenal"]} />
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Arrow label="produces" />
-                <NodeCard node={nodeMap["cortisol"]} />
-              </div>
-              <div className="flex items-center gap-2">
-                <Arrow label="produces" />
-                <NodeCard node={nodeMap["dhea"]} />
-              </div>
+              <div className="flex items-center gap-2"><Arrow label="produces" /><NodeCard node={nodeMap["cortisol"]} /></div>
+              <div className="flex items-center gap-2"><Arrow label="produces" /><NodeCard node={nodeMap["dhea"]} /></div>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Arrow label="converts →" />
-                <NodeCard node={nodeMap["estrogen"]} mini />
-              </div>
-              <div className="flex items-center gap-2">
-                <Arrow label="converts →" />
-                <NodeCard node={nodeMap["testosterone"]} mini />
-              </div>
+              <div className="flex items-center gap-2"><Arrow label="converts →" /><NodeCard node={nodeMap["estrogen"]} mini /></div>
+              <div className="flex items-center gap-2"><Arrow label="converts →" /><NodeCard node={nodeMap["testosterone"]} mini /></div>
             </div>
           </div>
-          <div className="mt-4 flex items-start gap-2 text-xs text-orange-700 bg-orange-50 border border-orange-200 rounded-lg px-3 py-2 w-fit">
+          <div className="mt-4 flex items-start gap-2 text-xs text-orange-700 bg-orange-50 border border-orange-200 rounded-lg px-3 py-2">
             <span>⚡</span>
             <span><strong>Estrogen moderates cortisol.</strong> When estrogen falls, the HPA axis becomes overreactive — cortisol stays high longer, sleep and metabolism are disrupted, and stress resilience falls.</span>
           </div>
         </div>
 
         {/* Metabolic web */}
-        <div className="border border-teal-200 rounded-2xl bg-teal-50/30 p-6 mb-6">
+        <div className="border border-teal-200 rounded-2xl bg-teal-50/30 p-4 sm:p-6 mb-6">
           <div className="text-xs font-bold uppercase tracking-wider text-teal-500 mb-4">Metabolic Web</div>
-          <div className="flex flex-col sm:flex-row items-center gap-4 flex-wrap">
+          {/* Mobile */}
+          <div className="flex flex-col gap-2 sm:hidden">
+            <NodeCard node={nodeMap["estrogen"]} mini />
+            <MobileArrow label="directly affects" />
+            <div className="grid grid-cols-3 gap-2">
+              <NodeCard node={nodeMap["insulin"]} />
+              <NodeCard node={nodeMap["leptin"]} />
+              <NodeCard node={nodeMap["thyroid"]} />
+            </div>
+            <MobileArrow label="shapes" />
+            <NodeCard node={nodeMap["metabolism"]} />
+          </div>
+          {/* Desktop */}
+          <div className="hidden sm:flex items-center gap-4 flex-wrap">
             <NodeCard node={nodeMap["estrogen"]} mini />
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <Arrow label="improves sensitivity" />
-                <NodeCard node={nodeMap["insulin"]} />
-              </div>
-              <div className="flex items-center gap-2">
-                <Arrow label="sensitises" />
-                <NodeCard node={nodeMap["leptin"]} />
-              </div>
-              <div className="flex items-center gap-2">
-                <Arrow label="modulates" />
-                <NodeCard node={nodeMap["thyroid"]} />
-              </div>
+              <div className="flex items-center gap-2"><Arrow label="improves sensitivity" /><NodeCard node={nodeMap["insulin"]} /></div>
+              <div className="flex items-center gap-2"><Arrow label="sensitises" /><NodeCard node={nodeMap["leptin"]} /></div>
+              <div className="flex items-center gap-2"><Arrow label="modulates" /><NodeCard node={nodeMap["thyroid"]} /></div>
             </div>
             <Arrow label="" />
             <NodeCard node={nodeMap["metabolism"]} />
           </div>
-          <div className="mt-4 flex items-start gap-2 text-xs text-teal-700 bg-teal-50 border border-teal-200 rounded-lg px-3 py-2 w-fit">
+          <div className="mt-4 flex items-start gap-2 text-xs text-teal-700 bg-teal-50 border border-teal-200 rounded-lg px-3 py-2">
             <span>⚖️</span>
             <span><strong>Estrogen is metabolically active.</strong> It improves insulin sensitivity, leptin signalling, and thyroid hormone availability simultaneously. When it falls, metabolic changes follow even without changes in diet or exercise.</span>
           </div>
         </div>
 
         {/* Sleep & repair */}
-        <div className="border border-indigo-200 rounded-2xl bg-indigo-50/30 p-6">
+        <div className="border border-indigo-200 rounded-2xl bg-indigo-50/30 p-4 sm:p-6">
           <div className="text-xs font-bold uppercase tracking-wider text-indigo-500 mb-4">Sleep & Repair Network</div>
-          <div className="flex flex-col sm:flex-row items-center gap-4 flex-wrap">
+          {/* Mobile */}
+          <div className="flex flex-col gap-2 sm:hidden">
+            <div className="grid grid-cols-2 gap-2">
+              <NodeCard node={nodeMap["estrogen"]} mini />
+              <NodeCard node={nodeMap["progesterone"]} mini />
+            </div>
+            <MobileArrow label="support" />
+            <NodeCard node={nodeMap["melatonin"]} />
+            <MobileArrow label="sleep enables" />
+            <NodeCard node={nodeMap["gh"]} />
+            <MobileArrow label="drives" />
+            <div className="text-center text-xs text-stone-600 bg-white border border-stone-200 rounded-xl p-3">
+              <div className="text-lg mb-1">💪</div>
+              <div className="font-medium">Muscle + Bone repair</div>
+            </div>
+            <div className="mt-2 flex items-center gap-2">
+              <NodeCard node={nodeMap["estrogen"]} mini />
+              <span className="text-xs text-stone-400">→ sensitises</span>
+              <NodeCard node={nodeMap["oxytocin"]} mini />
+              <span className="text-xs text-stone-400">→ buffers cortisol</span>
+            </div>
+          </div>
+          {/* Desktop */}
+          <div className="hidden sm:flex items-center gap-4 flex-wrap">
             <div className="flex flex-col gap-2">
               <NodeCard node={nodeMap["estrogen"]} mini />
               <NodeCard node={nodeMap["progesterone"]} mini />
@@ -399,11 +427,11 @@ export default function HormoneMapPage() {
               <div className="font-medium">Muscle + Bone repair</div>
             </div>
           </div>
-          <div className="mt-4 flex items-start gap-2 text-xs text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg px-3 py-2 max-w-xl">
+          <div className="mt-4 flex items-start gap-2 text-xs text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg px-3 py-2">
             <span>🌑</span>
             <span><strong>The sleep-repair cascade.</strong> Progesterone promotes deep sleep. Estrogen and progesterone support melatonin. Deep (slow-wave) sleep triggers growth hormone release. Hot flashes and hormonal disruption break this chain — suppressing GH and accelerating muscle and bone loss.</span>
           </div>
-          <div className="mt-3 flex items-center gap-3">
+          <div className="mt-3 hidden sm:flex items-center gap-3">
             <NodeCard node={nodeMap["estrogen"]} mini />
             <Arrow label="sensitises receptors" />
             <NodeCard node={nodeMap["oxytocin"]} />
@@ -568,6 +596,35 @@ export default function HormoneMapPage() {
           See symptoms by cluster →
         </Link>
       </div>
+    </div>
+  )
+}
+
+function MobileArrow({ label }: { label: string }) {
+  return (
+    <div className="flex flex-col items-center py-1">
+      <div className="w-px h-4 bg-stone-300" />
+      <svg className="w-3 h-3 text-stone-400" fill="currentColor" viewBox="0 0 8 8">
+        <path d="M4 8L0 0h8L4 8z" />
+      </svg>
+      {label && <span className="text-[10px] text-stone-400 mt-0.5">{label}</span>}
+    </div>
+  )
+}
+
+function MobileStep({ node, arrow }: { node: HormoneNode; arrow?: string }) {
+  return (
+    <div className="flex flex-col items-center">
+      <NodeCard node={node} />
+      {arrow && (
+        <div className="flex flex-col items-center py-1">
+          <div className="w-px h-3 bg-stone-300" />
+          <svg className="w-3 h-3 text-stone-400" fill="currentColor" viewBox="0 0 8 8">
+            <path d="M4 8L0 0h8L4 8z" />
+          </svg>
+          <span className="text-[10px] text-stone-400">{arrow}</span>
+        </div>
+      )}
     </div>
   )
 }
