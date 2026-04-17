@@ -270,6 +270,110 @@ export default function HormoneMapPage() {
         <h2 className="text-xl font-bold text-stone-900 mb-2">The hormone network at a glance</h2>
         <p className="text-sm text-stone-500 mb-6">Click any hormone card for detail. Arrows show what drives what.</p>
 
+        {/* Hypothalamus — Master Controller */}
+        <div className="border-2 border-slate-300 rounded-2xl bg-slate-50 p-4 sm:p-6 mb-6">
+          <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">The Master Controller — Start Here</div>
+          <div className="grid sm:grid-cols-2 gap-6">
+            {/* Left: What it is + where it is */}
+            <div>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="shrink-0 w-16 h-16 bg-slate-200 rounded-2xl flex items-center justify-center text-3xl">🧠</div>
+                <div>
+                  <div className="font-bold text-slate-900 text-sm mb-1">Hypothalamus</div>
+                  <div className="text-xs text-slate-600 leading-relaxed">
+                    A small region deep inside the brain — roughly the size of an almond — sitting just below the thalamus and above the brainstem. Despite its size, it is the command centre for most of your hormonal system.
+                  </div>
+                </div>
+              </div>
+              {/* Brain location diagram */}
+              <div className="bg-white border border-slate-200 rounded-xl p-3 text-xs text-slate-600">
+                <div className="font-semibold text-slate-700 mb-2 text-[11px] uppercase tracking-wide">Location in the brain</div>
+                <div className="space-y-1.5">
+                  {[
+                    { part: "Cerebral cortex", role: "Thinking, language, conscious control", highlight: false },
+                    { part: "Thalamus", role: "Sensory relay station", highlight: false },
+                    { part: "Hypothalamus ◀", role: "Hormonal master controller", highlight: true },
+                    { part: "Pituitary gland", role: "Executes hypothalamus instructions", highlight: false },
+                    { part: "Brainstem", role: "Heart rate, breathing, reflexes", highlight: false },
+                  ].map((item) => (
+                    <div key={item.part} className={`flex items-start gap-2 rounded px-2 py-1 ${item.highlight ? "bg-slate-200 font-semibold text-slate-900" : ""}`}>
+                      <span className="shrink-0 w-3 h-3 mt-0.5 rounded-sm border border-slate-300 bg-slate-100" />
+                      <div>
+                        <span className={item.highlight ? "text-slate-900" : "text-slate-700"}>{item.part}</span>
+                        <span className="text-slate-400 ml-1 text-[10px]">— {item.role}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right: What it controls */}
+            <div>
+              <div className="font-semibold text-slate-800 text-sm mb-3">What the hypothalamus controls</div>
+              {/* Three hormonal axes */}
+              <div className="space-y-2 mb-4">
+                {[
+                  {
+                    signal: "GnRH",
+                    axis: "Reproductive axis (HPO)",
+                    chain: "→ Pituitary → FSH + LH → Ovaries → Estrogen, Progesterone, Testosterone",
+                    color: "bg-rose-50 border-rose-200 text-rose-800",
+                    dot: "bg-rose-400",
+                  },
+                  {
+                    signal: "CRH",
+                    axis: "Stress axis (HPA)",
+                    chain: "→ Pituitary → ACTH → Adrenal glands → Cortisol, DHEA",
+                    color: "bg-orange-50 border-orange-200 text-orange-800",
+                    dot: "bg-orange-400",
+                  },
+                  {
+                    signal: "TRH",
+                    axis: "Thyroid axis (HPT)",
+                    chain: "→ Pituitary → TSH → Thyroid gland → T3 + T4",
+                    color: "bg-teal-50 border-teal-200 text-teal-800",
+                    dot: "bg-teal-400",
+                  },
+                ].map((item) => (
+                  <div key={item.signal} className={`border rounded-lg p-2.5 ${item.color}`}>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className={`w-2 h-2 rounded-full shrink-0 ${item.dot}`} />
+                      <span className="text-xs font-bold">{item.signal} pulse</span>
+                      <span className="text-[10px] opacity-70">— {item.axis}</span>
+                    </div>
+                    <div className="text-[10px] opacity-80 leading-relaxed pl-4">{item.chain}</div>
+                  </div>
+                ))}
+              </div>
+              {/* Also controls */}
+              <div className="bg-white border border-slate-200 rounded-xl p-3">
+                <div className="font-semibold text-slate-700 text-[11px] uppercase tracking-wide mb-2">Also directly controls</div>
+                <div className="grid grid-cols-2 gap-1.5">
+                  {[
+                    { emoji: "🌡️", label: "Body temperature", note: "The thermostat disrupted by hot flashes" },
+                    { emoji: "😴", label: "Sleep–wake cycle", note: "Circadian rhythm coordination" },
+                    { emoji: "🍽️", label: "Hunger & appetite", note: "Via leptin and ghrelin signalling" },
+                    { emoji: "💧", label: "Thirst & fluid balance", note: "Via ADH / vasopressin" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-start gap-1.5">
+                      <span className="text-sm shrink-0">{item.emoji}</span>
+                      <div>
+                        <div className="text-[11px] font-medium text-slate-700">{item.label}</div>
+                        <div className="text-[10px] text-slate-400 leading-tight">{item.note}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 flex items-start gap-2 text-xs text-slate-700 bg-white border border-slate-200 rounded-lg px-3 py-2">
+            <span>🔑</span>
+            <span><strong>Why this matters in perimenopause:</strong> The hypothalamus doesn&apos;t just regulate hormones — it also contains the KNDy neurons that control body temperature. As estrogen declines, these neurons destabilise the thermostat, triggering hot flashes. Everything on this map flows from signals that start here.</span>
+          </div>
+        </div>
+
         {/* HPO Axis */}
         <div className="border border-rose-200 rounded-2xl bg-rose-50/30 p-4 sm:p-6 mb-6">
           <div className="text-xs font-bold uppercase tracking-wider text-rose-500 mb-4">HPO Axis — Reproductive</div>
