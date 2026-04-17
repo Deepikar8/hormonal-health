@@ -88,7 +88,7 @@ export const femaleStages: LifeStage[] = [
       "Pregnancy: dramatic hormonal surges, then postpartum crash (hCG, progesterone, prolactin)",
     ],
     watchFor: [
-      "PCOS — androgen excess, insulin resistance, irregular cycles affecting ~10% of women",
+      "PCOS — androgen excess, insulin resistance, irregular cycles affecting 8–13% of women (prevalence varies by diagnostic criteria used)",
       "Endometriosis — estrogen-driven tissue growth outside the uterus",
       "PMDD — severe luteal-phase mood disruption, distinct from normal PMS",
       "Postpartum depression — progesterone and estrogen crash after delivery",
@@ -222,7 +222,7 @@ export const maleStages: LifeStage[] = [
     tagColor: "bg-blue-100 text-blue-800",
     headline: "Testosterone peaks in early 20s, then slowly begins to decline",
     description:
-      "Total testosterone peaks at around 19–20 years and stays high through the 20s. From the late 20s to mid-30s, free testosterone begins a slow decline of ~1–2% per year. Lifestyle factors — stress, sleep, metabolic health, body fat — have an increasingly large impact on hormonal status.",
+      "Total testosterone peaks around age 19–20 and declines gradually — total testosterone at roughly 1–2% per year from the late 20s; free testosterone declines somewhat faster as SHBG rises with age. Lifestyle factors — stress, sleep, metabolic health, body fat — have an increasingly large impact on hormonal status.",
     keyHormones: ["Testosterone (peak then slowly declining)", "Estradiol (balanced)", "FSH & LH (stable)", "Cortisol", "Insulin", "GH & IGF-1 (gradually declining)"],
     keyChanges: [
       "Testosterone peaks ~19–20, free testosterone begins declining from late 20s",
@@ -250,7 +250,7 @@ export const maleStages: LifeStage[] = [
     tagColor: "bg-orange-100 text-orange-800",
     headline: "Gradual testosterone decline — subtle but cumulative",
     description:
-      "Unlike female menopause, male hormonal decline is gradual — 1–2% per year in free testosterone from the mid-30s. By the mid-50s, many men have testosterone levels significantly below their peak. Late-onset hypogonadism (clinically low testosterone) affects an estimated 10–40% of men over 45. Because the decline is slow, symptoms accumulate quietly and are often attributed to ageing or stress.",
+      "Unlike female menopause, male hormonal decline is gradual — total testosterone at roughly 1–2% per year from the late 20s; free testosterone declines somewhat faster as SHBG rises with age. By the mid-50s, many men have testosterone levels significantly below their peak. Late-onset hypogonadism (clinically low testosterone with symptoms) affects an estimated 10–40% of men over 45 — the wide range reflects differing diagnostic criteria across studies. Because the decline is slow, symptoms accumulate quietly and are often attributed to ageing or stress.",
     keyHormones: ["Total testosterone (slowly declining)", "Free testosterone (declining faster — SHBG rises with age)", "Estradiol (may rise as aromatase activity increases with visceral fat)", "DHEA (declining — adrenopause)", "Cortisol (dysregulated)", "Insulin (resistance rising)", "GH & IGF-1 (continuing decline)"],
     keyChanges: [
       "Free testosterone falls faster than total — SHBG rises, binding more testosterone",
@@ -283,7 +283,7 @@ export const maleStages: LifeStage[] = [
     tagColor: "bg-stone-100 text-stone-700",
     headline: "Low testosterone baseline — metabolic and cardiovascular health central",
     description:
-      "Testosterone levels in men over 70 average 30–50% lower than in young men. DHEA is typically 20% of peak levels. The metabolic, cardiovascular, musculoskeletal, and cognitive consequences of decades of gradual hormone decline become more apparent. Quality of life interventions — exercise, sleep, nutrition, and where appropriate testosterone therapy — become increasingly important.",
+      "Testosterone levels in men over 70 average 30–50% lower than in young men. DHEA is typically 10–20% of peak levels. The metabolic, cardiovascular, musculoskeletal, and cognitive consequences of decades of gradual hormone decline become more apparent. Quality of life interventions — exercise, sleep, nutrition, and where appropriate testosterone therapy — become increasingly important.",
     keyHormones: ["Testosterone (low, variable)", "Estradiol (may be relatively high due to aromatase)", "DHEA (very low)", "Cortisol", "Insulin", "GH & IGF-1 (very low)", "Thyroid"],
     keyChanges: [
       "Sarcopenia — muscle loss accelerates; testosterone and GH both very low",

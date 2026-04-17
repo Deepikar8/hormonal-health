@@ -67,8 +67,8 @@ export const timelineStages: TimelineStage[] = [
     id: 'menopause',
     name: 'Menopause',
     subtitle: 'A single point in time, not a phase',
-    ageRange: 'Average age 51 (range 45–55)',
-    labClue: 'FSH >30 IU/L; estradiol <30 pg/mL',
+    ageRange: 'Average age 51 (range 45–55); premature ovarian insufficiency (POI) defined as menopause before age 40 affects ~1% of women',
+    labClue: 'FSH typically >30 IU/L; estradiol typically <30 pg/mL (thresholds are approximate — lab ranges vary)',
     description:
       'Menopause is defined retrospectively — it\'s the point 12 months after your final period. You only know you\'ve reached it by looking back. It\'s not a phase; it\'s a marker. The symptoms you\'ve been experiencing don\'t suddenly stop here.',
     symptoms: ['Defined as 12 consecutive months without a period', 'All perimenopausal symptoms may still be present'],

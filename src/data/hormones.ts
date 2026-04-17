@@ -127,7 +127,7 @@ export const hormones: Hormone[] = [
       "Cognitive dulling",
     ],
     perimeno:
-      "In early perimenopause, estrogen can drop faster than testosterone — creating a period of relative androgen excess that drives acne, hair changes, and irritability in some women. Later, when both are low, the effects reverse: fatigue, low libido, and loss of vitality. An international consensus statement (Davis et al., 2019) supports testosterone therapy for low libido in women.",
+      "In early perimenopause, estrogen can drop faster than testosterone — creating a period of relative androgen excess that drives acne, hair changes, and irritability in some women. Later, when both are low, the effects reverse: fatigue, low libido, and loss of vitality. An international consensus statement (Davis et al., 2019) supports testosterone therapy for hypoactive sexual desire disorder in women — though it currently remains off-label in most countries, as no testosterone product is specifically approved for women by the FDA or EMA.",
     color: "amber",
     headerColor: "bg-amber-50 border-amber-200",
     group: "sex-hormones",
@@ -158,7 +158,7 @@ export const hormones: Hormone[] = [
       "Reduced immune function",
     ],
     perimeno:
-      "DHEA declines steadily from the mid-20s onward — by age 70 it is about 20% of peak levels. This decline is called 'adrenopause' and is separate from ovarian menopause. In perimenopause, declining DHEA reduces the adrenal backup supply of sex hormones. DHEA-S is the test typically ordered (more stable than DHEA). Intravaginal DHEA (prasterone) is FDA-approved for vaginal symptoms of menopause.",
+      "DHEA declines steadily from the mid-20s onward — by age 70 it is typically 10–20% of peak levels. This decline is called 'adrenopause' and is separate from ovarian menopause. In perimenopause, declining DHEA reduces the adrenal backup supply of sex hormones. DHEA-S is the test typically ordered (more stable than DHEA). Intravaginal DHEA (prasterone) is FDA-approved for vaginal symptoms of menopause.",
     color: "lime",
     headerColor: "bg-lime-50 border-lime-200",
     group: "adrenal",
@@ -180,7 +180,7 @@ export const hormones: Hormone[] = [
     ],
     whatHappensWhenItChanges: [
       "FSH rises (not drops) in perimenopause — the brain compensates for declining ovarian responsiveness",
-      "Elevated FSH (>10 IU/L on day 2–5; >30 post-menopause) is the main lab confirmation",
+      "Rising FSH (typically >10 IU/L on day 2–5 in many assays; >30 IU/L post-menopause) is the main lab confirmation — exact thresholds are assay-dependent and vary by lab",
       "FSH itself fluctuates in early perimenopause — a single normal reading doesn't rule out perimenopause",
     ],
     perimeno:

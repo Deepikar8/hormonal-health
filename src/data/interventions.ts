@@ -48,16 +48,16 @@ export const treatmentData: SymptomTreatments[] = [
         type: 'non-hormonal',
         evidenceTier: 'strong',
         plainDescription:
-          'Paroxetine (Brisdelle) is the only FDA-approved non-hormonal option for hot flashes. Other SSRIs and SNRIs (venlafaxine, escitalopram) are effective off-label. Reduces hot flash frequency by ~50%.',
+          'Paroxetine (Brisdelle) was the first FDA-approved non-hormonal prescription option specifically for hot flashes (2013). Other SSRIs and SNRIs (venlafaxine, escitalopram) are effective off-label. Reduces hot flash frequency by ~50%.',
         bestFor: ['Hot flashes', 'Night sweats', 'Also helps mood and anxiety'],
         caveats: 'Takes 2–4 weeks to work. Some sexual side effects. Discontinuation syndrome.',
       },
       {
         name: 'Gabapentin',
         type: 'non-hormonal',
-        evidenceTier: 'strong',
+        evidenceTier: 'moderate',
         plainDescription:
-          'Originally an epilepsy medication, gabapentin reduces hot flash frequency significantly, particularly at night. Especially useful if sleep disruption is prominent.',
+          'Originally an epilepsy medication, gabapentin reduces hot flash frequency, particularly at night. Especially useful if sleep disruption is prominent. Trial data shows benefit but results are more mixed than for fezolinetant or SSRIs.',
         bestFor: ['Hot flashes', 'Night sweats', 'Sleep (sedating effect)'],
         caveats: 'Sedation, dizziness. Usually taken at night. Dose-dependent.',
       },
@@ -301,10 +301,10 @@ export const treatmentData: SymptomTreatments[] = [
         type: 'hormonal',
         evidenceTier: 'moderate',
         plainDescription:
-          'The "timing hypothesis": HRT started in perimenopause or within 10 years of menopause (before age 60) appears cardioprotective — reducing coronary heart disease risk by ~50% in observational data. HRT started late (>10 years postmenopause) does not show this benefit.',
+          'The "timing hypothesis": HRT started in perimenopause or within 10 years of menopause (before age 60) appears cardioprotective in observational data (Nurses\' Health Study reported ~50% lower CHD risk). Smaller RCTs (KEEPS, ELITE) show favourable trends but have not confirmed the magnitude of benefit. HRT started late (>10 years postmenopause) does not show this benefit.',
         bestFor: ['Cardiovascular risk reduction (if started early)'],
         caveats:
-          'HRT is not currently recommended solely for cardiovascular prevention. Benefit is greatest as part of overall symptom management started early.',
+          'HRT is not currently recommended solely for cardiovascular prevention. The ~50% figure is from observational data only. Benefit is greatest as part of overall symptom management started early.',
       },
       {
         name: 'Statins (if lipids warrant)',

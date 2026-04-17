@@ -31,7 +31,7 @@ export const symptoms: Symptom[] = [
       "Night sweats soaking sheets or nightclothes",
     ],
     whenItTypicallyStarts:
-      "Usually in late perimenopause, though 1 in 4 women experience them up to 11 years before their last period. On average they last 7–10 years. Around 25% of women have persistent symptoms long after menopause.",
+      "Usually in late perimenopause, though many women begin experiencing them years before their final period. On average they last 7–9 years for women whose symptoms begin before the final period — shorter for those with later onset. Around 25% of women have persistent symptoms long after menopause (SWAN study data).",
     keyTests: ["Serum estradiol (E2)", "FSH", "Symptom diary (frequency + severity)"],
     color: "orange",
   },
@@ -43,7 +43,7 @@ export const symptoms: Symptom[] = [
     plainExplanation:
       "Irritability that comes out of nowhere. Anxiety that feels different from your usual stress. Crying for no obvious reason. Rage that surprises even you. These aren't character flaws or going crazy — they're neurological responses to shifting hormones.",
     whatIsHappening:
-      "Estrogen and progesterone both have direct effects on brain chemistry. Estrogen influences serotonin (your mood stabiliser) and norepinephrine (your stress responder). Progesterone breaks down into a substance called allopregnanolone, which calms the nervous system the same way anti-anxiety medications do. As both hormones fluctuate and decline, the brain's emotional regulation system loses its usual buffers. The risk of a first episode of depression is 2–4× higher during perimenopause than at any other time in a woman's adult life.",
+      "Estrogen and progesterone both have direct effects on brain chemistry. Estrogen influences serotonin (your mood stabiliser) and norepinephrine (your stress responder). Progesterone breaks down into a substance called allopregnanolone, which calms the nervous system the same way anti-anxiety medications do. As both hormones fluctuate and decline, the brain's emotional regulation system loses its usual buffers. SWAN study data found the risk of a first-onset depressive episode is approximately 2–4× higher during the perimenopause transition compared to pre-menopausal years.",
     commonSymptoms: [
       "Irritability or rage that feels out of proportion",
       "Anxiety, sometimes with no identifiable cause",
@@ -106,7 +106,7 @@ export const symptoms: Symptom[] = [
       "Feeling not as sharp compared to your previous baseline",
     ],
     whenItTypicallyStarts:
-      "31% of women report forgetfulness in the reproductive stage; this rises to ~44% in early perimenopause. Most women see improvement after menopause.",
+      "SWAN data found memory complaints reported by approximately 31% of women in the late reproductive stage, rising to around 44% in early perimenopause. Most women see improvement after menopause.",
     keyTests: [
       "Estradiol",
       "TSH + Free T3/T4 (hypothyroidism is the most treatable cause of brain fog)",
@@ -121,7 +121,7 @@ export const symptoms: Symptom[] = [
     emoji: "🦴",
     tagline: "The aches nobody warns you about",
     plainExplanation:
-      "New joint stiffness in the morning. Aching hips or knees that appeared from nowhere. A frozen shoulder that won't budge. These musculoskeletal symptoms are among the least recognised as perimenopausal — many women are told they just have arthritis when hormones are the primary driver.",
+      "New joint stiffness in the morning. Aching hips or knees that appeared from nowhere. A frozen shoulder that won't budge. These musculoskeletal symptoms are among the least recognised as perimenopausal — many women are told they just have arthritis, but hormonal changes are an important and often overlooked contributing factor.",
     whatIsHappening:
       "Estrogen receptors are present in joint tissue (synovium), cartilage, tendons, and bone. Estrogen has anti-inflammatory effects — it suppresses inflammatory signalling molecules like IL-6 and TNF-α. As estrogen declines, this anti-inflammatory protection is lost, and joints and soft tissue become more reactive and slower to recover. Bone loss also begins accelerating significantly in late perimenopause.",
     commonSymptoms: [
@@ -191,7 +191,7 @@ export const symptoms: Symptom[] = [
       "Estradiol",
       "Free and total testosterone",
       "SHBG",
-      "Vaginal pH (>5.0 suggests atrophy)",
+      "Vaginal pH (normal range 3.8–4.5; elevation above 4.5 suggests atrophic change)",
       "Urinalysis",
     ],
     color: "rose",
@@ -261,7 +261,7 @@ export const symptoms: Symptom[] = [
     plainExplanation:
       "Skin that feels drier or thinner. Hair that seems to shed more or grow more slowly. Acne returning in your 40s. Dry, gritty eyes. These changes are real, have hormonal drivers, and are often dismissed or attributed to ageing when hormones are the primary cause.",
     whatIsHappening:
-      "Estrogen stimulates collagen production — skin loses about 30% of its collagen in the first 5 years after menopause. Estrogen also supports hair follicle cycling. As estrogen declines faster than androgens, a relative androgen excess can occur — driving the same changes seen in PCOS (acne, hair thinning on the scalp, sometimes increased facial hair). Dry eyes are linked to both estrogen and androgen decline affecting the meibomian glands.",
+      "Estrogen stimulates collagen production — skin loses approximately 25–30% of its collagen in the first 5 years after menopause. Estrogen also supports hair follicle cycling. As estrogen declines faster than androgens, a relative androgen excess can occur — driving the same changes seen in PCOS (acne, hair thinning on the scalp, sometimes increased facial hair). Dry eyes are linked to both estrogen and androgen decline affecting the meibomian glands.",
     commonSymptoms: [
       "Dry, thinner skin",
       "Hair shedding more than usual or growing more slowly",

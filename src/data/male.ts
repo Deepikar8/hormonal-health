@@ -41,7 +41,7 @@ export const maleSymptoms: MaleSymptom[] = [
     color: "indigo",
     cause: "Testosterone, cortisol, thyroid",
     description:
-      "Testosterone has direct effects on mood, motivation, and sense of wellbeing via dopaminergic and serotonergic pathways. Men with low testosterone are 3–4x more likely to have depression. But the presentation often differs from typical depression — it presents as irritability, emotional numbness, withdrawal, anhedonia, or loss of competitive drive rather than sadness.",
+      "Testosterone has direct effects on mood, motivation, and sense of wellbeing via dopaminergic and serotonergic pathways. Epidemiological studies find men with low testosterone have a significantly higher prevalence of depression (some studies report 2–4× higher) — though the relationship is bidirectional: depression itself suppresses testosterone. The presentation often differs from typical depression — it presents as irritability, emotional numbness, withdrawal, anhedonia, or loss of competitive drive rather than sadness.",
     tests: ["Total and free testosterone", "Cortisol (morning)", "Thyroid panel", "PHQ-9 (depression screen)", "GAD-7 (anxiety screen)"],
     notes: "Male depression is significantly underdiagnosed. Men are less likely to describe emotional symptoms — instead they describe losing interest in things they used to enjoy, or feeling 'flat'. Testosterone deficiency and depression can be indistinguishable without a blood test.",
   },
@@ -65,7 +65,7 @@ export const maleSymptoms: MaleSymptom[] = [
     description:
       "Testosterone is released primarily during sleep — especially during REM sleep. Poor sleep quality directly reduces testosterone. Conversely, low testosterone increases the risk of sleep apnoea (via effects on upper airway tone and respiratory drive). Sleep apnoea then further suppresses testosterone — creating a self-reinforcing cycle.",
     tests: ["Total testosterone (morning)", "Sleep apnoea screen (Epworth Sleepiness Scale)", "Cortisol (morning + evening)", "Thyroid panel"],
-    notes: "Obstructive sleep apnoea is significantly more common in men than women and is a major suppressant of testosterone. Treating sleep apnoea alone can raise testosterone meaningfully without any hormonal intervention.",
+    notes: "Obstructive sleep apnoea is significantly more common in men than women and is a major suppressant of testosterone. Treating sleep apnoea alone can raise testosterone meaningfully without any hormonal intervention. Effects are most pronounced in men with moderate-to-severe OSA.",
   },
   {
     id: "cognition",
@@ -134,7 +134,7 @@ export const maleTreatments: MaleTreatment[] = [
     evidence: "A",
     forSymptoms: ["fatigue", "muscle-fat", "mood", "sleep", "cardiovascular", "bone"],
     description: "The single most effective non-pharmacological intervention for testosterone levels. Compound movements (squats, deadlifts, bench press) produce the strongest acute testosterone and GH response. Consistent training over months raises baseline testosterone and GH.",
-    notes: "Even 2–3 sessions per week of moderate-intensity resistance training can raise free testosterone 15–20% in hypogonadal men. Also directly addresses sarcopenia, metabolic syndrome, and mood.",
+    notes: "Even 2–3 sessions per week of resistance training can raise testosterone in hypogonadal and overweight men — studies report increases of 10–15% in these populations. Effects are more modest in men with already-normal baseline testosterone. Also directly addresses sarcopenia, metabolic syndrome, and mood.",
   },
   {
     name: "Sleep optimisation",
@@ -142,7 +142,7 @@ export const maleTreatments: MaleTreatment[] = [
     evidence: "A",
     forSymptoms: ["fatigue", "libido", "mood", "muscle-fat", "cognition"],
     description: "Testosterone is released during sleep, especially REM sleep. Even one week of sleep restriction to 5 hours per night reduces testosterone by 10–15% in young men. Sleep apnoea treatment alone can raise testosterone substantially.",
-    notes: "Sleep apnoea is the most common and most reversible cause of low testosterone in men. CPAP treatment in men with OSA raises testosterone by an average of 2–3 nmol/L.",
+    notes: "Sleep apnoea is a common and underdiagnosed cause of low testosterone in men. CPAP treatment in men with OSA has been shown to raise testosterone — meta-analyses report average increases of approximately 1–2 nmol/L, with larger effects in those with more severe OSA.",
   },
   {
     name: "Weight / visceral fat reduction",
@@ -174,7 +174,7 @@ export const maleTreatments: MaleTreatment[] = [
     evidence: "B",
     forSymptoms: ["fatigue", "mood", "muscle-fat", "libido"],
     description: "An adaptogen that reduces cortisol and has been shown in multiple RCTs to raise testosterone modestly (8–15%) and improve strength, recovery, and sexual function. Mechanism: cortisol suppresses testosterone production; lowering cortisol via HPA modulation allows testosterone to rise.",
-    notes: "The KSM-66 extract has the best evidence. Typical dose: 300–600mg daily. Effects appear after 8–12 weeks. Well-tolerated in most studies.",
+    notes: "The KSM-66 extract has the best evidence base, though most RCTs are small and industry-funded. Typical dose: 300–600mg daily. Effects appear after 8–12 weeks. Well-tolerated in most studies.",
   },
 ]
 

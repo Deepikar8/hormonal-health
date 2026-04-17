@@ -150,7 +150,7 @@ const diseaseRisks: DiseaseRisk[] = [
       { condition: "Cardiovascular disease", mechanism: "Estrogen keeps arteries flexible, raises HDL, lowers LDL. Decline → arterial stiffness, lipid changes, atherosclerosis.", severity: "High" },
       { condition: "Type 2 diabetes", mechanism: "Estrogen enhances insulin sensitivity directly via PPARG signalling. Decline → insulin resistance can emerge without any dietary change.", severity: "Moderate" },
       { condition: "Depression", mechanism: "Estrogen regulates serotonin and norepinephrine. Erratic fluctuation destabilises mood circuitry — even in women with no prior history.", severity: "Moderate" },
-      { condition: "Dementia / Alzheimer's", mechanism: "Estrogen supports hippocampal neuroplasticity, synaptic density, and amyloid clearance. Timing hypothesis: early decline may increase long-term risk.", severity: "Emerging" },
+      { condition: "Dementia / Alzheimer's", mechanism: "Estrogen supports hippocampal neuroplasticity and synaptic density. Amyloid clearance effects are primarily from preclinical research. The 'timing hypothesis' suggests early hormonal decline may increase long-term risk — evidence is observational.", severity: "Emerging" },
       { condition: "Genitourinary syndrome", mechanism: "Vaginal, urethral, and bladder tissue is estrogen-dependent. Atrophy → recurrent UTIs, incontinence, painful sex.", severity: "High" },
     ],
   },
@@ -164,7 +164,7 @@ const diseaseRisks: DiseaseRisk[] = [
     risks: [
       { condition: "Sleep disorders", mechanism: "Progesterone metabolite allopregnanolone activates GABA-A receptors, promoting slow-wave sleep. Loss → insomnia, light sleep, early waking.", severity: "High" },
       { condition: "Anxiety disorders", mechanism: "Without GABA-A stimulation from allopregnanolone, stress reactivity increases — identical presentation to GAD but with hormonal cause.", severity: "Moderate" },
-      { condition: "Endometrial hyperplasia", mechanism: "Unopposed estrogen (no progesterone to counterbalance) overstimulates the uterine lining — a precursor to endometrial cancer.", severity: "Moderate" },
+      { condition: "Endometrial hyperplasia", mechanism: "Unopposed estrogen (no progesterone to counterbalance) overstimulates the uterine lining — a precursor to endometrial cancer. This applies to women with an intact uterus; progesterone is always prescribed alongside estrogen in HRT for this reason.", severity: "Moderate" },
     ],
   },
   {
@@ -191,7 +191,7 @@ const diseaseRisks: DiseaseRisk[] = [
     risks: [
       { condition: "Type 2 diabetes", mechanism: "Insulin resistance → compensatory hyperinsulinemia → beta cell exhaustion → T2D. Can develop in previously metabolically healthy women.", severity: "High" },
       { condition: "Non-alcoholic fatty liver disease", mechanism: "Insulin resistance drives hepatic lipid accumulation — NAFLD prevalence rises sharply post-menopause.", severity: "Moderate" },
-      { condition: "Polycystic ovarian features", mechanism: "Hyperinsulinemia stimulates ovarian androgen production — can create PCOS-like symptoms even in perimenopause.", severity: "Emerging" },
+      { condition: "Hyperandrogenic symptoms", mechanism: "Hyperinsulinemia stimulates ovarian androgen production — can drive acne, irregular cycles, and other androgen-excess features in perimenopause distinct from PCOS.", severity: "Emerging" },
     ],
   },
   {
