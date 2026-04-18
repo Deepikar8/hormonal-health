@@ -112,12 +112,20 @@ const axisDescriptions = [
     hormones: ["CRH (hypothalamus)", "ACTH (pituitary)", "Cortisol, DHEA (adrenal glands)"],
   },
   {
-    name: "Metabolic Web",
-    fullName: "Insulin · Thyroid · Leptin · GH",
+    name: "HPT Axis",
+    fullName: "Hypothalamic-Pituitary-Thyroid Axis",
     color: "bg-teal-100 border-teal-300",
     textColor: "text-teal-900",
-    description: "Estrogen has direct effects on insulin sensitivity, leptin signalling, and thyroid hormone availability. When estrogen shifts, so does metabolic function — even without changes in diet or lifestyle. Growth hormone (released during deep sleep) also declines as perimenopause disrupts slow-wave sleep, compounding body composition changes.",
-    hormones: ["Insulin (pancreas)", "Leptin & Ghrelin (fat cells, stomach)", "Thyroid T3/T4 (thyroid gland)", "Growth Hormone + IGF-1 (pituitary, liver)"],
+    description: "The thyroid axis runs in parallel with the HPO and HPA axes — all three originate in the hypothalamus. TRH signals the pituitary to release TSH, which tells the thyroid to produce T3 and T4. Thyroid hormones set the metabolic rate of every cell. Estrogen changes alter thyroid-binding globulin (TBG), directly affecting how much free thyroid hormone is available — even when TSH looks normal.",
+    hormones: ["TRH — Thyrotropin-releasing hormone (hypothalamus)", "TSH — Thyroid-stimulating hormone (pituitary)", "T4 — Thyroxine (thyroid gland)", "T3 — Triiodothyronine (converted in tissues from T4)"],
+  },
+  {
+    name: "Metabolic Web",
+    fullName: "Insulin · Leptin · GH",
+    color: "bg-yellow-100 border-yellow-300",
+    textColor: "text-yellow-900",
+    description: "Estrogen has direct effects on insulin sensitivity and leptin signalling. When estrogen shifts, so does metabolic function — even without changes in diet or lifestyle. Growth hormone (released during deep sleep) also declines as perimenopause disrupts slow-wave sleep, compounding body composition changes.",
+    hormones: ["Insulin (pancreas)", "Leptin & Ghrelin (fat cells, stomach)", "Growth Hormone + IGF-1 (pituitary, liver)"],
   },
 ]
 
@@ -458,9 +466,74 @@ export default function HormoneMapPage() {
           </div>
         </div>
 
-        {/* Metabolic web */}
+        {/* HPT Axis */}
         <div className="border border-teal-200 rounded-2xl bg-teal-50/30 p-4 sm:p-6 mb-6">
-          <div className="text-xs font-bold uppercase tracking-wider text-teal-500 mb-4">Metabolic Web</div>
+          <div className="text-xs font-bold uppercase tracking-wider text-teal-500 mb-4">HPT Axis — Thyroid</div>
+          {/* Mobile */}
+          <div className="flex flex-col gap-2 sm:hidden">
+            <MobileStep node={nodeMap["hypothalamus"]} arrow="TRH ↓" />
+            <MobileStep node={nodeMap["pituitary"]} arrow="TSH ↓" />
+            <MobileStep node={nodeMap["thyroid"]} arrow="produces ↓" />
+            <div className="flex justify-center gap-3">
+              <div className="text-center text-xs text-stone-600 bg-white border border-teal-200 rounded-xl p-3 w-24">
+                <div className="text-lg mb-1">🔥</div>
+                <div className="font-semibold">T4</div>
+                <div className="text-[10px] text-stone-400">Thyroxine</div>
+              </div>
+              <div className="text-center text-xs text-stone-600 bg-white border border-teal-200 rounded-xl p-3 w-24">
+                <div className="text-lg mb-1">⚡</div>
+                <div className="font-semibold">T3</div>
+                <div className="text-[10px] text-stone-400">Active form</div>
+              </div>
+            </div>
+          </div>
+          {/* Desktop */}
+          <div className="hidden sm:flex items-center gap-3 flex-wrap">
+            <NodeCard node={nodeMap["hypothalamus"]} />
+            <Arrow label="TRH" />
+            <NodeCard node={nodeMap["pituitary"]} />
+            <Arrow label="TSH" />
+            <NodeCard node={nodeMap["thyroid"]} />
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <Arrow label="produces" />
+                <div className="text-center text-xs text-stone-600 bg-white border border-teal-200 rounded-xl p-2.5 w-24">
+                  <div className="text-base mb-0.5">🔥</div>
+                  <div className="font-semibold text-teal-900">T4</div>
+                  <div className="text-[10px] text-stone-400">Thyroxine (storage form)</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Arrow label="converts to" />
+                <div className="text-center text-xs text-stone-600 bg-white border border-teal-300 rounded-xl p-2.5 w-24">
+                  <div className="text-base mb-0.5">⚡</div>
+                  <div className="font-semibold text-teal-900">T3</div>
+                  <div className="text-[10px] text-stone-400">Active form (tissues)</div>
+                </div>
+              </div>
+            </div>
+            <div className="ml-2 flex flex-col gap-2">
+              <Arrow label="drives" />
+              <div className="text-center text-xs text-stone-600 bg-teal-50 border border-teal-200 rounded-xl p-2.5 w-28">
+                <div className="text-base mb-0.5">⚖️</div>
+                <div className="font-semibold text-teal-900">Metabolism</div>
+                <div className="text-[10px] text-stone-400">Energy, heat, heart rate, mood</div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-4 flex items-start gap-2 text-xs text-teal-700 bg-teal-50 border border-teal-200 rounded-lg px-3 py-2">
+            <span>🦋</span>
+            <span><strong>Estrogen raises TBG (thyroid-binding globulin).</strong> This protein binds T4 in the bloodstream, reducing how much free T3/T4 is available to cells. When estrogen fluctuates in perimenopause, TBG shifts too — meaning thyroid function can appear normal on TSH alone while free T3/T4 are actually low. Always test free T3 and free T4 alongside TSH.</span>
+          </div>
+          <div className="mt-2 flex items-start gap-2 text-xs text-stone-600 bg-white border border-teal-100 rounded-lg px-3 py-2">
+            <span>↺</span>
+            <span><strong>Feedback loop:</strong> T3 and T4 feed back to the hypothalamus and pituitary to suppress TRH and TSH — the same negative feedback pattern as the HPO axis. When thyroid output falls, TSH rises to compensate.</span>
+          </div>
+        </div>
+
+        {/* Metabolic web */}
+        <div className="border border-yellow-200 rounded-2xl bg-yellow-50/30 p-4 sm:p-6 mb-6">
+          <div className="text-xs font-bold uppercase tracking-wider text-yellow-600 mb-4">Metabolic Web — Insulin · Leptin · GH</div>
           {/* Mobile */}
           <div className="flex flex-col gap-2 sm:hidden">
             <NodeCard node={nodeMap["estrogen"]} mini />
@@ -484,9 +557,9 @@ export default function HormoneMapPage() {
             <Arrow label="" />
             <NodeCard node={nodeMap["metabolism"]} />
           </div>
-          <div className="mt-4 flex items-start gap-2 text-xs text-teal-700 bg-teal-50 border border-teal-200 rounded-lg px-3 py-2">
+          <div className="mt-4 flex items-start gap-2 text-xs text-yellow-800 bg-yellow-50 border border-yellow-200 rounded-lg px-3 py-2">
             <span>⚖️</span>
-            <span><strong>Estrogen is metabolically active.</strong> It improves insulin sensitivity, leptin signalling, and thyroid hormone availability simultaneously. When it falls, metabolic changes follow even without changes in diet or exercise.</span>
+            <span><strong>Estrogen is metabolically active.</strong> It improves insulin sensitivity and leptin signalling simultaneously. When it falls, metabolic changes follow even without changes in diet or exercise.</span>
           </div>
         </div>
 
