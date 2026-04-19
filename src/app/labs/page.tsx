@@ -296,8 +296,27 @@ export default function LabsPage() {
         ))}
       </div>
 
+      {/* Print prompt */}
+      <div className="mt-10 flex items-start gap-4 bg-amber-50 border border-amber-200 rounded-2xl p-5">
+        <span className="text-2xl shrink-0">🖨️</span>
+        <div>
+          <div className="font-semibold text-amber-900 text-sm mb-1">Take this to your appointment</div>
+          <p className="text-xs text-amber-800 leading-relaxed mb-3">
+            This page is designed to be used at a doctor&apos;s appointment. Print it or save it to your phone before you go — it gives you the exact test names, timing, and reference ranges to ask about.
+          </p>
+          <div className="flex flex-wrap gap-2 items-center">
+            <span className="text-xs bg-amber-100 border border-amber-300 text-amber-800 px-3 py-1.5 rounded-lg font-medium">
+              Print: Ctrl+P (Windows) · Cmd+P (Mac)
+            </span>
+            <Link href="/talk-to-your-doctor" className="text-xs bg-white border border-amber-300 text-amber-800 px-3 py-1.5 rounded-lg font-medium hover:bg-amber-50 transition-colors">
+              How to talk to your doctor →
+            </Link>
+          </div>
+        </div>
+      </div>
+
       {/* Talking to your doctor */}
-      <div className="mt-12 bg-stone-900 text-white rounded-2xl p-8">
+      <div className="mt-8 bg-stone-900 text-white rounded-2xl p-8">
         <h2 className="text-xl font-bold mb-4">Talking to your doctor</h2>
         <div className="grid md:grid-cols-2 gap-6 text-sm text-stone-300 leading-relaxed">
           <div>

@@ -67,8 +67,28 @@ export default function AndropausePage() {
         </div>
       </div>
 
+      {/* Section nav */}
+      <div className="flex flex-wrap gap-2 mb-10 border-b border-stone-200 pb-4">
+        {[
+          { href: '#what-is-happening', label: 'What\'s happening', emoji: '🔬' },
+          { href: '#symptoms', label: 'Symptoms', emoji: '📋' },
+          { href: '#treatments', label: 'What helps', emoji: '💊' },
+          { href: '#labs', label: 'Lab guide', emoji: '🧪' },
+          { href: '#comparison', label: 'vs Perimenopause', emoji: '⚖️' },
+        ].map(item => (
+          <a key={item.href} href={item.href} className="flex items-center gap-1.5 text-xs font-medium text-stone-600 bg-stone-100 hover:bg-blue-50 hover:text-blue-800 border border-stone-200 hover:border-blue-200 px-3 py-1.5 rounded-lg transition-colors">
+            <span>{item.emoji}</span>
+            <span>{item.label}</span>
+          </a>
+        ))}
+        <Link href="/talk-to-your-doctor" className="flex items-center gap-1.5 text-xs font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-3 py-1.5 rounded-lg transition-colors ml-auto">
+          <span>🩺</span>
+          <span>Talk to your doctor</span>
+        </Link>
+      </div>
+
       {/* What is andropause */}
-      <section className="mb-12">
+      <section id="what-is-happening" className="mb-12">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-2xl font-bold text-stone-900 mb-4">What is actually happening</h2>
@@ -245,7 +265,7 @@ export default function AndropausePage() {
       </section>
 
       {/* Perimenopause parallel */}
-      <section className="mb-12">
+      <section id="comparison" className="mb-12 scroll-mt-20">
         <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6">
           <h2 className="text-lg font-bold text-stone-900 mb-3">How andropause compares to perimenopause</h2>
           <div className="grid md:grid-cols-2 gap-6 text-sm text-stone-600">

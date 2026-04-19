@@ -21,6 +21,7 @@ const navItems: NavItem[] = [
     children: [
       { href: '/female', label: 'Overview', description: 'All female life stages' },
       { href: '/female/perimenopause', label: 'Perimenopause', description: 'The deep-dive guide' },
+      { href: '/female/perimenopause/am-i-in-perimenopause', label: 'Am I in Perimenopause?', description: 'Checklist & self-assessment' },
       { href: '/symptoms', label: 'Symptoms', description: 'All 10 symptom clusters' },
       { href: '/timeline', label: 'Timeline', description: 'When symptoms appear' },
       { href: '/what-helps', label: 'What Helps', description: 'Evidence-rated treatments' },
@@ -41,6 +42,16 @@ const navItems: NavItem[] = [
     children: [
       { href: '/hormones', label: 'All Hormones', description: '14 hormones explained' },
       { href: '/hormones/map', label: 'Hormone Map', description: 'How they all connect' },
+    ],
+  },
+  {
+    href: '/lifestyle',
+    label: 'Resources',
+    children: [
+      { href: '/lifestyle', label: 'Lifestyle & Hormones', description: 'Exercise, diet, sleep, stress' },
+      { href: '/mental-health', label: 'Mental Health', description: 'Anxiety, depression, PMDD' },
+      { href: '/talk-to-your-doctor', label: 'Talk to Your Doctor', description: 'Scripts, tests, advocacy' },
+      { href: '/glossary', label: 'Glossary', description: 'Plain-language definitions' },
     ],
   },
   { href: '/sources', label: 'Sources' },

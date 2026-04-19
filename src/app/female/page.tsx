@@ -166,23 +166,24 @@ export default function FemalePage() {
         <h2 className="text-xl font-bold text-stone-900 mb-6">Hormonal conditions across female life stages</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-            { stage: 'Puberty–30s', name: 'PCOS', emoji: '🔄', color: 'bg-pink-50 border-pink-200', desc: 'Androgen excess and insulin resistance causing irregular cycles, acne, and fertility challenges. Affects ~10% of women.' },
-            { stage: 'Reproductive years', name: 'Endometriosis', emoji: '🩸', color: 'bg-rose-50 border-rose-200', desc: 'Estrogen-driven tissue growth outside the uterus. Often takes 7–10 years to diagnose. Affects ~10% of women.' },
-            { stage: 'Reproductive years', name: 'PMDD', emoji: '🌊', color: 'bg-violet-50 border-violet-200', desc: 'Severe luteal-phase mood disruption driven by sensitivity to progesterone changes. Distinct from PMS.' },
-            { stage: 'Perimenopause', name: 'Late-onset depression', emoji: '🌧️', color: 'bg-amber-50 border-amber-200', desc: 'New-onset depression in the 40s is frequently hormonal in origin — estrogen regulates serotonin and norepinephrine.' },
-            { stage: 'Post-menopause', name: 'Osteoporosis', emoji: '🦴', color: 'bg-stone-50 border-stone-200', desc: 'Bone density falls sharply in the first 5–7 years post-menopause without estrogen protection. DXA scan is essential.' },
-            { stage: 'Post-menopause', name: 'Cardiovascular disease', emoji: '❤️', color: 'bg-red-50 border-red-200', desc: 'Estrogen protects arteries. Post-menopause, CVD becomes the leading cause of death in women — exceeding breast cancer.' },
+            { stage: 'Puberty–30s', name: 'PCOS', emoji: '🔄', color: 'bg-pink-50 border-pink-200', desc: 'Androgen excess and insulin resistance causing irregular cycles, acne, and fertility challenges. Affects 8–13% of women.', href: '/symptoms' },
+            { stage: 'Reproductive years', name: 'Endometriosis', emoji: '🩸', color: 'bg-rose-50 border-rose-200', desc: 'Estrogen-driven tissue growth outside the uterus. Often takes 7–10 years to diagnose. Affects ~10% of women.', href: '/symptoms' },
+            { stage: 'Reproductive years', name: 'PMDD', emoji: '🌊', color: 'bg-violet-50 border-violet-200', desc: 'Severe luteal-phase mood disruption driven by sensitivity to progesterone changes. Distinct from PMS. Affects 3–8% of women.', href: '/mental-health' },
+            { stage: 'Perimenopause', name: 'Late-onset depression', emoji: '🌧️', color: 'bg-amber-50 border-amber-200', desc: 'New-onset depression in the 40s is frequently hormonal in origin — estrogen regulates serotonin and norepinephrine.', href: '/mental-health' },
+            { stage: 'Post-menopause', name: 'Osteoporosis', emoji: '🦴', color: 'bg-stone-50 border-stone-200', desc: 'Bone density falls sharply in the first 5–7 years post-menopause without estrogen protection. DXA scan is essential.', href: '/what-helps' },
+            { stage: 'Post-menopause', name: 'Cardiovascular disease', emoji: '❤️', color: 'bg-red-50 border-red-200', desc: 'Estrogen protects arteries. Post-menopause, CVD becomes the leading cause of death in women — exceeding breast cancer.', href: '/what-helps' },
           ].map(item => (
-            <div key={item.name} className={`border rounded-xl p-4 ${item.color}`}>
+            <Link key={item.name} href={item.href} className={`border rounded-xl p-4 hover:shadow-sm transition-all ${item.color}`}>
               <div className="flex items-start gap-3">
                 <span className="text-2xl">{item.emoji}</span>
                 <div>
                   <div className="text-[11px] text-stone-400 font-medium mb-0.5">{item.stage}</div>
                   <div className="font-semibold text-stone-900 text-sm mb-1">{item.name}</div>
                   <p className="text-xs text-stone-600 leading-relaxed">{item.desc}</p>
+                  <div className="text-[11px] text-stone-400 mt-1.5">Learn more →</div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
